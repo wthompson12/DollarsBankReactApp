@@ -1,4 +1,5 @@
 import './App.css';
+import { Redirect } from "react-router";
 
 
 import React, {useEffect, useState} from 'react';
@@ -23,6 +24,7 @@ function DollarsBankApp() {
       <Router>
         <main>
           <Switch>
+            <Redirect exact from="/" to="atm" />
             <Route path="/Login"><Login
               login={login} users={users} setLogin={setLogin} setUsers={setUsers}/></Route>
 
