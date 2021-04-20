@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  background: url("./img/atm.jpg") no-repeat center center;
+  position: relative;
+  
+    background-size:cover;
+    padding-top: 8rem;
+    padding-bottom: 30rem;
+    
+}
