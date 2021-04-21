@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 export default function Welcome() {
 	return (
 		<div className="atm">
-			<h1 style={{ paddingLeft:100 }}>William's Legit ATM</h1>
+			<h1 style={{ paddingLeft:150 }}>William's Legit ATM</h1>
 			<br></br>
 	
-			<Link to="/Login" style={{ paddingLeft:100 }}>
+			<Link to="/Login" style={{ paddingLeft:150 }}>
           		<button className="btn-primary" type="button">
-            		Login
+            		Enter Your Pin Number
           		</button>
       		</Link>
-			<br/>
-			<Link to="/CreatePin" style={{ paddingLeft:100 }}>
+			<br></br>
+			<br></br>
+			<Link to="/CreatePin" style={{ paddingLeft:150 }}>
           		<button className="btn-primary" type="button">
            			 Create PIN Number
           		</button>

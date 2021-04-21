@@ -8,14 +8,33 @@ export default function Home(props) {
 
 	return (
 		<div className="atmChoices">
-			<h1>Home Page</h1>
-			<Link to="/deposit">Deposit Funds</Link>
-			<br/>
-			<Link to="/withdraw">Withdraw Funds</Link>
-			<br/>
-			<Link to="/AccountBalance">Accoutn Balance Details</Link>
-			<br/>
-			<Link to="/LogOut">Log out</Link>
+			<h1 style={{ paddingLeft:250 }}>ATM Menu</h1>
+			<Link to="/deposit" style={{ paddingLeft:250 }}>
+          		<button className="btn-primary" type="button">
+            		Deposit
+          		</button>
+      		</Link>
+			<br></br>
+			<br></br>
+			<Link to="/withdraw" style={{ paddingLeft:250 }}>
+          		<button className="btn-warning" type="button">
+            		Withdraw
+          		</button>
+      		</Link>
+			<br></br>
+			<br></br>
+			<Link to="/AccountBalance" style={{ paddingLeft:250 }}>
+          		<button className="btn-info" type="button">
+            		Account Balance Details
+          		</button>
+      		</Link>
+			<br></br>
+			<br></br>
+			<Link to="/LogOut" style={{ paddingLeft:250 }}>
+          		<button className="btn-danger" type="button">
+            		Sign Out
+          		</button>
+      		</Link>
 		</div>
 	);
 }

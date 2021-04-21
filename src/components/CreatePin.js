@@ -4,23 +4,23 @@ import { Link } from "react-router-dom";
 
 
 export default function CreatePin(props) {
-  //State constants
-  const [pinNumber, setPinNumber] = useState(0);
-  const [pinNumber2, setPinNumber2] = useState(0);
-  const [name, setName] = useState(0);
+
+  const [pinNumber, setPinNumber] = useState("");
+  const [pinNumber2, setPinNumber2] = useState("");
+  const [name, setName] = useState("");
   const [balance, setBalance] = useState(0.00);
   const [error, setError] = useState(<></>);
   const [redirect, setRedirect] = useState(<></>);
 
-  //form event
+ 
   const handleSubmit = (event) => {
-    //immediately stops default behavior
+    
     event.preventDefault();
 
-    //checks if the username does NOT exist
+    //checks if the Pin Number does NOT exist
     if (!props.users.has(pinNumber)) {
     console.log();
-      //checks that passwords match
+      //checks that Pin Numbers match
       if (pinNumber === pinNumber2) {
 
         //inserts entry into the users list
@@ -69,8 +69,8 @@ export default function CreatePin(props) {
       {redirect}
       <br></br>
       <Link to="/atm" style={{ paddingLeft:250 }}>
-          <button className="btn-primary" type="button">
-            Back
+          <button className="btn-success" type="button">
+            Home
           </button>
       </Link>
     </div>

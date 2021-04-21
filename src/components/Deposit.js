@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Deposit(props) {
   
@@ -11,7 +12,7 @@ export default function Deposit(props) {
     event.preventDefault();
 
     props.login.balance = (props.login.balance + deposit);
-    props.users.set(props.login.username, props.login);
+    props.users.set(props.login.pinNumber, props.login);
 
     props.setLogin(props.login);
     props.setUsers(props.users);
@@ -22,7 +23,7 @@ export default function Deposit(props) {
 	return (
 		<div className="deposit">
 			<h1 style={{ paddingLeft:260 }}>Deposit Page</h1>
-      <form style={{ paddingLeft:250 }}>
+      <form style={{ paddingLeft:200 }}>
         <label htmlFor="deposit-input">Deposit Amount:</label>
         <input type="number" id="deposit-input" name="deposit-input"
           value={deposit} onChange={event => setDeposit(Number(event.target.value))}></input>
@@ -34,9 +35,11 @@ export default function Deposit(props) {
       <br></br>
       {error}
       {redirect}
-			<form style={{ paddingLeft:250 }} action="/atmChoices/">
-    			<input className="btn-primary" type="submit" value="Home" />
-			</form>
+      <Link to="/atmChoices" style={{ paddingLeft:200 }}>
+          <button className="btn-success" type="button">
+            ATM Menu
+          </button>
+      </Link>
 		</div>
 	);
 }

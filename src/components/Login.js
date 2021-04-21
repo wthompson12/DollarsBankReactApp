@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 export default function Login(props) {
-    //State constants
+ 
     const [pinNumber, setPinNumber] = useState("");
     const [error, setError] = useState(<></>);
     const [redirect, setRedirect] = useState(<></>);
@@ -22,12 +22,12 @@ export default function Login(props) {
         console.log();
         props.setLogin(tempUser);
         setRedirect(<Redirect to="/atmChoices/"/>);
-        //checks for password match
+        //checks if pins match
         if (tempUser.pinNumber === pinNumber) {
-          //lifts up login state as the found user
+        
           props.setLogin(tempUser);
 
-          //redirects to home page
+          //redirects to atm menu
           setRedirect(<Redirect to="/atmChoices/"/>);
         } else {
           console.log();
@@ -41,8 +41,8 @@ export default function Login(props) {
 
   return (
     <div className="login">
-      <h1>Login Page</h1>
-      <form>
+      <h1 style={{ paddingLeft:150 }}>Login Page</h1>
+      <form style={{ paddingLeft:150 }}>
         <label htmlFor="pinNumber-input">Pin #:</label>
         <input type="text" id="pinNumber-input" name="pinNumber-input"
           value={pinNumber} onChange={event => setPinNumber(event.target.value)}></input>
@@ -54,9 +54,9 @@ export default function Login(props) {
       {error}
       {redirect}
       <br></br>
-      <Link to="/atm">
-          <button className="btn-primary" type="button">
-            Back
+      <Link to="/atm" style={{ paddingLeft:150 }}>
+          <button className="btn-success" type="button">
+            Home
           </button>
       </Link>
     </div>

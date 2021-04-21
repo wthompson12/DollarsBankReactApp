@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Withdraw(props) {
   
@@ -12,7 +13,7 @@ export default function Withdraw(props) {
     event.preventDefault();
 
     props.login.balance = (props.login.balance - withdrawl);
-    props.users.set(props.login.username, props.login);
+    props.users.set(props.login.pinNumber, props.login);
 
     props.setLogin(props.login);
     props.setUsers(props.users);
@@ -22,8 +23,8 @@ export default function Withdraw(props) {
 
 	return (
 		<div className="withdraw">
-			<h1 style={{ paddingLeft:260 }}>Withdrawl Page</h1>
-      <form style={{ paddingLeft:260 }}>
+			<h1 style={{ paddingLeft:260 }}>Withdraw Page</h1>
+      <form style={{ paddingLeft:200 }}>
         <label htmlFor="withdrawl-input">Withdraw Amount:</label>
         <input type="number" id="withdrawl-input" name="withdrawl-input"
           value={withdrawl} onChange={event => setWithdrawl(Number(event.target.value))}></input>
@@ -35,9 +36,11 @@ export default function Withdraw(props) {
       <br></br>
       {error}
       {redirect}
-			<form style={{ paddingLeft:250 }} action="/atmChoices/">
-    			<input className="btn-primary" type="submit" value="Home" />
-			</form>
+			<Link to="/atmChoices" style={{ paddingLeft:200 }}>
+          <button className="btn-success" type="button">
+            ATM Menu
+          </button>
+      </Link>
 		</div>
 	);
 }
