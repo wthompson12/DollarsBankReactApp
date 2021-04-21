@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 
 
@@ -53,9 +54,11 @@ export default function Login(props) {
       {error}
       {redirect}
       <br></br>
-      <form action="/atm">
-    			<input className="btn-primary" type="submit" value="Back" />
-			</form>
+      <Link to="/atm">
+          <button className="btn-primary" type="button">
+            Back
+          </button>
+      </Link>
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 
 export default function CreatePin(props) {
   //State constants
-  const [pinNumber, setPinNumber] = useState("");
-  const [pinNumber2, setPinNumber2] = useState("");
-  const [name, setName] = useState("");
+  const [pinNumber, setPinNumber] = useState(0);
+  const [pinNumber2, setPinNumber2] = useState(0);
+  const [name, setName] = useState(0);
   const [balance, setBalance] = useState(0.00);
   const [error, setError] = useState(<></>);
   const [redirect, setRedirect] = useState(<></>);
@@ -31,6 +33,7 @@ export default function CreatePin(props) {
         props.setUsers(props.users);
         console.log(props.users);
         setRedirect(<p className="is-success">Successfully created user!</p>);
+        <Redirect exact from="/" to="atm" />
 
       } else {
         setError(<p className="is-error">The pin number is not the same!!!!!!!!!!!</p>);
@@ -65,9 +68,11 @@ export default function CreatePin(props) {
       {error}
       {redirect}
       <br></br>
-      <form style={{ paddingLeft:250 }} action="/atm">
-    			<input className="btn-primary" type="submit" value="Back" />
-			</form>
+      <Link to="/atm" style={{ paddingLeft:250 }}>
+          <button className="btn-primary" type="button">
+            Back
+          </button>
+      </Link>
     </div>
   );
 }

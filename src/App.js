@@ -17,7 +17,7 @@ function DollarsBankApp() {
   const [users, setUsers] = useState(new Map());
   const [login, setLogin] = useState([null]);
 
-  users.set({pinNumber: 1234, name:"Son Goku", balance:100.00,});
+  //users.set({pinNumber: 1234, name:"Son Goku", balance:100.00,});
   useEffect(()=>{console.log(users)},[users]);
   return (
     <div className="App">
